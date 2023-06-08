@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --ff-body: 'Roboto', sans-serif;
+
+    --bg-color: white;
+    --primary-color: #323238;
+    --button-color: #E1E1E6;
+    --button-select-color:#02799d;
+
+    /* Dark Mode*/
+
+    --bg-dark-color:#121214;
+    --second-color: #ffffff;
+    --button-dark-color: #C4C4CC;
+    --button-select-dark-color: #0A3442;
+}
+
+body{
+    font-size: 13rem;
+    color: var(--primary-color);
+    font-family: var(--ff-body);
+
+    display: grid;
+    min-height: 100vh;
+}
+
+.style-mode{
+    position: absolute;
+
+    right: 20rem;
+    top: 0;
+
+    cursor: pointer;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 130px;
+}
+
+#stopwatch{
+    width: 321px;
+    height: 213px;
+}
+
+#timer{
+    font-size:clamp(13rem, 13rem + 10vw, 8.8rem);
+    font-weight: 500;
+
+    display: flex;
+    justify-content: center;
+}
+
+#controls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+}
+
+#sounds{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 350px;
+    height: 336px;
+
+    flex-wrap: wrap;
+}
+
+.cards{ 
+    padding: 4rem;
+    border-radius: 24px;
+    background: var(--button-color);
+}
+
+#sounds button{
+    margin: 1rem;
+    width: 138px;
+    height: 152px;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
+}
+.select{
+    background-color: var(--button-select-color);
+}
+
+.select svg path{
+    fill: white;
+}
+
+.sum:active svg path,
+.subtraction:active svg path{
+    fill: var(--button-select-color);
+}
+
+
+/* Dark Mode*/
+
+body.dark-mode{
+    background-color: var(--bg-dark-color);
+    color: var(--second-color);
+}
+
+.cards.dark-mode{
+    background: var(--button-dark-color);
+}
+
+.select.dark-mode{
+    background-color: var(--button-select-dark-color);
+}
+
+.dark-mode.play svg path,
+.dark-mode.stop svg path,
+.dark-mode.set svg path,
+.dark-mode.sum svg path,
+.dark-mode.subtraction svg path{
+    fill: var(--button-dark-color);
+}
+
+.dark-mode.pause svg path{
+    fill: var(--button-select-dark-color);
+}
+
+.dark-mode.sum:active svg path,
+.dark-mode.subtraction:active svg path{
+    fill: var(--button-select-dark-color);
+}
